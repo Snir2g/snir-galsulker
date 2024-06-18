@@ -1,0 +1,104 @@
+footer {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #3a3a3a;
+    height: 50vw;
+    min-height: 631px;
+
+    img {
+      height: 45vw;
+      width: 45vw;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+    #contact {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+      /*
+      margin-top: 3.5rem;
+      margin-right: 3.5rem;
+      */
+      margin-top: 5vw;
+      margin-right: 10vw;
+
+      h3 {
+        font-weight: bold;
+        font-size: 2.25rem;
+        color: white;
+        text-align: right;
+      }
+      p {
+        color: white;
+        font-size: 1.25rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 34rem;
+        label {
+          font-size: 1rem;
+          color: white;
+          margin-top: 0.7rem;
+        }
+        input,
+        textarea {
+          border: none;
+          border-bottom: solid #1ae0ec 0.25rem;
+        }
+        textarea {
+          height: 6rem;
+        }
+        input {
+          height: 2.875rem;
+        }
+
+        button {
+          @include button(1.375rem, 900, 0.5rem, 3.125rem);
+          font-family: heebo;
+          margin-top: 2rem;
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  #contact-info {
+    background-color: #1ae0ec;
+    display: flex;
+    justify-content: center;
+    padding: 3.75rem 0rem;
+    menu {
+      @include flex-row-reverse-center();
+      justify-content: space-between;
+      width: 60%;
+
+      li {
+        list-style: none;
+        a {
+          @include flex-column-center();
+          text-decoration: none;
+          color: #2c2c2c;
+          img {
+            margin-bottom: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  #rights {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background-color: black;
+    font-weight: 300;
+    color: #1ae0ec;
+    padding: 0.1rem 1.25rem;
+  }
+}

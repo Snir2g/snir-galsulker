@@ -1,0 +1,18 @@
+#content {
+  #sub-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #13e8f163;
+    height: 28rem;
+    color: #3a3a3a;
+    h2 {
+      font: normal normal 900 5rem heebo;
+    }
+    p {
+      font: normal normal medium 1.25rem heebo;
+      text-align: center;
+    }
+  }
+}

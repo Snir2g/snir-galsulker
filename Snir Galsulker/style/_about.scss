@@ -1,0 +1,24 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6.25rem 0;
+  img {
+    width: 8.8125rem;
+    height: 8.6875rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2.1875;
+    font-weight: 900;
+  }
+  p {
+    width: 35vw;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  button {
+    @include button(1.25rem, bold, 0.375rem, 2.875rem);
+  }
+}
