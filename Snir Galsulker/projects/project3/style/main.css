@@ -12,26 +12,36 @@ body {
 
 html {
   font-family: heebo;
+  font-size: calc(0.7em + 0.2vw + 0.2vh);
 }
 
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /*Ensure items are spaced correctly */
+  height: 100vh; /* Make main take up full viewport height */
 }
 
-main #container {
-  margin: 10rem 5vw 0 5vw;
-
-  /*margin-left: 5vw;*/
+#container {
+  display: flex;
+  flex-direction: column;
+  margin: 10vh 5vw;
 }
 
 #image-container {
-  justify-self: flex-end;
-  text-align: left;
+  display: flex;
+  justify-content: end; /* Center the image horizontally */
+  height: 100vh; /* Ensure the container takes full viewport height */
+  max-width: 50%;
 }
+
 #image-container img {
-  object-fit: contain;
+  width: auto;
+  height: 100%; /* Ensure image takes up full height */
+  max-width: 100%;
+  object-fit: cover; /* Cover the container */
 }
+
 main header h1 {
   font-size: 2.6rem;
   font-weight: 900;
@@ -56,12 +66,14 @@ main div form label {
   font-weight: bold;
   color: #2c2c2c;
 }
+
 main div form input {
   height: 3.125rem;
   border: none;
   border-bottom: 0.5rem solid #020253;
   background-color: #e5eeff;
   margin-bottom: 1.3rem;
+  padding: 0.5rem;
 }
 
 .btn {
@@ -74,17 +86,40 @@ main div form input {
   font-weight: bold;
 }
 
-/* Medium devices (tablets, 768px and up)*/
+/* XX-Large devices (larger desktops, 1400px and down)*/
+@media (max-width: 1400px) {
+  html {
+    font-size: 70%;
+  }
+}
+/*large desktops, 1200px and down*/
+@media (max-width: 1200px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+/* Medium devices (tablets, 768px and down)*/
 @media (max-width: 768px) {
   main {
-    grid-template-columns: auto;
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Allow auto height for main */
+  }
+  #image-container {
+    order: -1; /* Move image container to the top */
+    width: 100%; /* Ensure full width */
+    height: auto; /* Allow auto height */
+    max-width: none;
   }
   #image-container img {
     content: url("../images/Coffee-wide.png");
-    max-width: 100%;
-    max-height: 50vw;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
   }
-  #image-container {
-    order: -1;
+  #container {
+    margin: 5rem 5rem;
+  }
+  .btn {
+    width: 100%;
   }
 }

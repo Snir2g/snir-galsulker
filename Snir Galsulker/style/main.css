@@ -140,11 +140,19 @@ html {
   font-weight: bold;
   color: #3a3a3a;
   padding: 0.375rem 2.875rem;
+  cursor: pointer;
 }
 #about button img {
   width: 1.25rem;
   height: 1.25rem;
   vertical-align: text-bottom;
+}
+#about button a {
+  text-decoration: none;
+  color: #3a3a3a;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 #my-projects {
@@ -197,6 +205,10 @@ html {
 #my-projects #projects-grid article > section p {
   margin-bottom: 1rem;
 }
+#my-projects #projects-grid article > section .tech img {
+  width: 1.625rem;
+  height: 1.625rem;
+}
 #my-projects #projects-grid article .pro-img {
   width: 100%;
   height: 14rem;
@@ -209,11 +221,19 @@ html {
   font-weight: 700;
   color: #3a3a3a;
   padding: 0.3125rem 1.25rem;
+  cursor: pointer;
 }
 #my-projects #projects-grid article button img {
   width: 0.875rem;
   height: 0.875rem;
   vertical-align: text-bottom;
+}
+#my-projects #projects-grid article button a {
+  text-decoration: none;
+  color: #3a3a3a;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -283,6 +303,7 @@ footer div #contact form button {
   font-weight: 900;
   color: #3a3a3a;
   padding: 0.5rem 3.125rem;
+  cursor: pointer;
   font-family: heebo;
   margin-top: 2rem;
   width: -moz-fit-content;
@@ -292,6 +313,13 @@ footer div #contact form button img {
   width: 1.375rem;
   height: 1.375rem;
   vertical-align: text-bottom;
+}
+footer div #contact form button a {
+  text-decoration: none;
+  color: #3a3a3a;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 footer #contact-info {
   background-color: #1ae0ec;
@@ -392,4 +420,41 @@ footer #rights {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+}
+.pre-btn {
+  border-radius: 1.5625rem;
+  border: none;
+  background-color: #1ae0ec;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3a3a3a;
+  padding: 0.375rem 1rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-family: heebo;
+}
+.pre-btn img {
+  width: 0.875rem;
+  height: 0.875rem;
+  vertical-align: text-bottom;
+}
+.pre-btn a {
+  text-decoration: none;
+  color: #3a3a3a;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#project-img-section {
+  margin-top: 7rem;
+  margin-bottom: 11.5rem;
+  text-align: center;
+}
+#project-img-section img {
+  width: 80%;
+  height: auto;
+  max-width: auto;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
 }/*# sourceMappingURL=main.css.map */

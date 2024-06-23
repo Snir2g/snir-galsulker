@@ -4,29 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style/main.css" rel="stylesheet" />
-    <title>Project 2</title>
+    <title>ייעוץ חינם</title>
   </head>
   <body>
+    <div id="top-bar" class="bar"></div>
+    <div id="w-icon" class="circle">
+      <img src="images/Icon-awesome-whatsapp.svg" alt="whatsapp" />
+    </div>
     <main>
-      <div id="container">
+      <section>
         <header>
-          <h1>קפה טוב לבוקר טוב</h1>
+          <h1>ייעוץ חינם</h1>
           <p>
-            לקבלת קופון לקפה חינם ומפנק שיפתח לכם את היום בחיוך, יש למלא את
-            הפרטים:
+            לקבלת ייעוץ חינם, מוזמנים להשאיר פרטים ומומחה יחזור אליכם עם מענה.
           </p>
         </header>
-        <form>
-          <label for="full-name">שם מלא</label>
-          <input type="text" id="full-name" />
-          <label for="email">דוא"ל</label>
-          <input type="email" id="email" />
-          <button class="btn">שליחה</button>
+        <form id="form">
+          <div id="area-full-name">
+            <label for="full-name">שם מלא</label>
+            <input type="text" id="full-name" />
+          </div>
+          <div id="area-email">
+            <label for="email">דוא"ל</label>
+            <input type="email" id="email" />
+          </div>
+          <div id="area-message">
+            <label for="message">תוכן ההודעה</label>
+            <textarea id="message"></textarea>
+          </div>
+          <div id="area-button">
+            <button id="btn">שליחה</button>
+          </div>
         </form>
-      </div>
-      <div id="image-container">
-        <img src="images/Coffee.png" alt="כוס קפה" />
+      </section>
+      <div id="img-container">
+        <img src="images/Image-1.png" alt="phone chat" />
       </div>
     </main>
+    <aside id="social-links">
+      <div class="circle">
+        <img src="images/Icon-awesome-whatsapp.svg" alt="whatsapp" />
+      </div>
+      <div class="circle">
+        <img src="images/Icon-awesome-instagram.svg" alt="linkedin" />
+      </div>
+      <div class="circle">
+        <img src="images/Icon-awesome-linkedin-in.svg" alt="whatsapp" />
+      </div>
+      <div class="circle">
+        <img src="images/Icon-awesome-phone-solid.svg" alt="whatsapp" />
+      </div>
+    </aside>
+
+    <div id="bottom-bar" class="bar"></div>
   </body>
 </html>

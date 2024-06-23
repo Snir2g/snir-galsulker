@@ -1,90 +1,183 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
-/*init all tags*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Heebo;
 }
 
 body {
-  max-height: 100vh;
-}
-
-html {
-  font-family: heebo;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-main #container {
-  margin: 10rem 5vw 0 5vw;
-
-  /*margin-left: 5vw;*/
-}
-
-#image-container {
-  justify-self: flex-end;
-  text-align: left;
-}
-#image-container img {
-  object-fit: contain;
-}
-main header h1 {
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: #020253;
-  margin-bottom: 1.2rem;
-}
-
-main header p {
-  color: #020253;
-  font-size: 1.25rem;
-  margin-bottom: 1.6rem;
-}
-
-main div form {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
-
-main div form label {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #2c2c2c;
+body #w-icon {
+  margin-left: 5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-end;
 }
-main div form input {
-  height: 3.125rem;
-  border: none;
-  border-bottom: 0.5rem solid #020253;
-  background-color: #e5eeff;
+body .bar {
+  background-color: #fdbd03;
+  height: 1.125rem;
+}
+body #top-bar {
+  width: 25%;
+}
+body #bottom-bar {
+  width: 65%;
+  align-self: flex-end;
+}
+body main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 2;
+}
+body main section header {
+  margin-bottom: 2.5rem;
+}
+body main section header h1 {
+  font-size: 4.125rem;
+  color: #fdbd03;
   margin-bottom: 1.3rem;
 }
-
-.btn {
-  margin-top: 1.3rem;
-  background-color: #020253;
+body main section header p {
+  color: #020253;
+  font-size: 1.25rem;
+  width: 60%;
+}
+body main section form {
+  display: grid;
+  grid-template-areas: "area-full-name area-full-name area-email area-email" "area-message area-message area-message area-message" "area-button . . .";
+  gap: 1rem;
+}
+body main section form #area-full-name {
+  grid-area: area-full-name;
+}
+body main section form #area-email {
+  grid-area: area-email;
+}
+body main section form #area-message {
+  grid-area: area-message;
+}
+body main section form #area-button {
+  grid-area: area-button;
+}
+body main section form div {
+  display: flex;
+  flex-direction: column;
+}
+body main section form #btn {
+  background-color: #fdbd03;
   border: none;
-  padding: 1rem 3.125rem;
-  width: fit-content;
-  color: white;
+  padding: 0.625rem 3.125rem;
   font-weight: bold;
+  font-size: 1.375rem;
+  margin-top: 4rem;
+}
+body main #img-container img {
+  width: 22rem;
+  height: auto;
+}
+body #social-links {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+body #social-links .circle {
+  margin-left: 1rem;
 }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: auto;
-  }
-  #image-container img {
-    content: url("../images/Coffee-wide.png");
-    max-width: 100%;
-    max-height: 50vw;
-  }
-  #image-container {
-    order: -1;
+input,
+textarea {
+  border: none;
+  border-bottom: 0.25rem solid #fdbd03;
+  background-color: #e5eeff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+input {
+  height: 3.125rem;
+}
+
+textarea {
+  height: 9rem;
+}
+
+.circle {
+  border-radius: 100%;
+  background-color: #fdbd03;
+  padding: 1.25rem;
+  display: inline-flex;
+}
+.circle img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 95%;
   }
 }
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 66%;
+  }
+  #w-icon {
+    display: none;
+  }
+  main {
+    flex-direction: column-reverse !important;
+    flex-wrap: wrap;
+    margin: 0 1.5rem;
+  }
+  main section {
+    flex-grow: 2;
+  }
+  main section header {
+    text-align: center !important;
+  }
+  main section header p {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  main section form {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  main #img-container {
+    align-content: center;
+    align-self: center !important;
+    flex-grow: 1;
+  }
+  main #img-container img {
+    width: auto !important;
+    height: 15rem !important;
+  }
+  #social-links {
+    align-self: center !important;
+  }
+  #social-links :last-child {
+    margin: 0 !important;
+  }
+  #top-bar {
+    width: 90% !important;
+  }
+  #bottom-bar {
+    width: 100% !important;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+}/*# sourceMappingURL=main.css.map */

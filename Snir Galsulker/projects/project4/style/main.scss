@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap"); //הפונט לכל הטקסט באתר
+$primaryColor: #fdbd03; //הצבע המוביל בדף הנחיתה
+
+//איפוס הגדרות עיצוב ספציפיות לכל האלמנטים
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Heebo;
+}
+
+//כל גוף האתר מוגדר כפלקס עם כיוון של עמודה ותופס את כל Viewport
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  //whatsapp האייקון הצף של
+  #w-icon {
+    margin-left: 5rem;
+    width: fit-content;
+    align-self: flex-end;
+  }
+
+  //מחלקה כללית עבור עיצוב הקווים שבראש ותחתית הדף עם הצבע הומביל של הדף
+  .bar {
+    background-color: $primaryColor;
+    height: 1.125rem;
+  }
+
+  #top-bar {
+    width: 25%;
+  }
+
+  #bottom-bar {
+    width: 65%;
+    align-self: flex-end;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-grow: 2;
+    section {
+      header {
+        margin-bottom: 2.5rem;
+
+        h1 {
+          font-size: 4.125rem;
+          color: $primaryColor;
+          margin-bottom: 1.3rem;
+        }
+        p {
+          color: #020253;
+          font-size: 1.25rem;
+          width: 60%;
+        }
+      }
+
+      //עימוד ועיצוב ספציפי לטופס
+      form {
+        display: grid;
+        grid-template-areas:
+          "area-full-name area-full-name area-email area-email"
+          "area-message area-message area-message area-message"
+          "area-button . . .";
+        gap: 1rem;
+
+        #area-full-name {
+          grid-area: area-full-name;
+        }
+        #area-email {
+          grid-area: area-email;
+        }
+        #area-message {
+          grid-area: area-message;
+        }
+        #area-button {
+          grid-area: area-button;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #btn {
+          background-color: $primaryColor;
+          border: none;
+          padding: 0.625rem 3.125rem;
+          font-weight: bold;
+          font-size: 1.375rem;
+          margin-top: 4rem;
+        }
+      }
+    }
+
+    //עיצוב לתמונה שלצד הטופס ליצירת קשר
+    #img-container {
+      img {
+        width: 22rem;
+        height: auto;
+      }
+    }
+  }
+
+  //קישורי התקשרות
+  #social-links {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    .circle {
+      margin-left: 1rem;
+    }
+  }
+}
+
+//עיצוב כללי לתיבות קלט
+input,
+textarea {
+  border: none;
+  border-bottom: 0.25rem solid $primaryColor;
+  background-color: #e5eeff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+input {
+  height: 3.125rem;
+}
+textarea {
+  height: 9rem;
+}
+
+//מחלקה כללית לעיצוב תגית לעיגול כולל תכונות לתמונה בתוכה
+.circle {
+  border-radius: 100%;
+  background-color: $primaryColor;
+  padding: 1.25rem;
+  display: inline-flex;
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+// X-Large devices (large desktops)
+@media (max-width: 1200px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+// Large devices (desktops)
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+// Medium devices (tablets)
+@media (max-width: 768px) {
+  html {
+    font-size: 66%;
+  }
+
+  //whatsapp הסתרת האייקון הצף של
+  #w-icon {
+    display: none;
+  }
+
+  main {
+    flex-direction: column-reverse !important;
+    flex-wrap: wrap;
+    margin: 0 1.5rem;
+
+    section {
+      flex-grow: 2;
+
+      header {
+        text-align: center !important;
+        p {
+          width: 100% !important;
+          text-align: center !important;
+        }
+      }
+
+      form {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
+    //יישור התמונה שמעל טופס (במצב מובייל וטאבלט)
+    #img-container {
+      align-content: center;
+      align-self: center !important;
+      flex-grow: 1;
+
+      img {
+        width: auto !important;
+        height: 15rem !important;
+      }
+    }
+  }
+
+  //מרכוז של 4 העיגולים בתחתית העמוד
+  #social-links {
+    align-self: center !important;
+
+    //ביטול של המרווח של העיגול הראשון
+    :last-child {
+      margin: 0 !important;
+    }
+  }
+
+  #top-bar {
+    width: 90% !important;
+  }
+  #bottom-bar {
+    width: 100% !important;
+  }
+}
+
+// Small devices (landscape phones)
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+}

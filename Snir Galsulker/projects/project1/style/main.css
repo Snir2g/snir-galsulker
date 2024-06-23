@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* img
+.bar {
+  width: 100vw;
+  height: 25vw;
+}
+*/
+
+/*div*/
+.bar {
+  position: absolute;
+  width: 100vw;
+  height: 25vw;
+  background-image: url(../images/Path15@2x.png);
+  background-size: 100vw 25vw;
+  background-repeat: no-repeat;
+}
+.contact {
+  position: relative;
+  background-color: #1a1a1ad4;
+  padding: 3rem;
+  top: calc(100% * 0.3);
+  max-width: 35rem;
+  width: calc(100% * 0.4);
+  right: calc(100% * 0.15);
+}
+.contact section {
+  display: flex;
+  flex-direction: column;
+}
+.contact section h1,
+.contact section p,
+.contact section label {
+  color: white;
+}
+.contact section h1 {
+  margin: 1rem;
+  font: normal normal 900 2.25rem Heebo;
+  text-align: center;
+}
+.contact section p {
+  font: normal normal normal 1.25rem Heebo;
+  text-align: center;
+}
+
+.contact form input[type="submit"] {
+  font: normal normal bold 1.25rem Heebo;
+}
+.contact section form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact section label {
+  font: normal normal bold 1rem Heebo;
+}
+
+.contact section form input {
+  margin-bottom: 1rem;
+}
+.contact section form input[type="text"],
+.contact section form input[type="email"] {
+  border: #d31c75 solid 1px;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+.contact form input[type="submit"] {
+  padding: 0.5rem;
+}
+
+/* // X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+  html {
+    font-size: 78%;
+  }
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 70%;
+  }
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+  /*
+  .contact {
+    display: block;
+    position: static;
+    margin: 8rem auto;
+    max-width: none;
+    width: 50vw;
+  }*/
+  .contact section h1 {
+    margin: 2rem 3rem 2rem 3rem;
+    font-size: 1.5rem;
+  }
+  .contact section p {
+    font-size: 1.2rem;
+  }
+  html {
+    font-size: 70%;
+  }
+  /*
+  .bar {
+    background-image: url(../img/path15_smalldvice.png);
+  }
+  */
+}
+
+/* X-Small devices (portrait phones, less than 583px)*/
+@media (max-width: 582.98px) {
+  .contact section h1 {
+    margin: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+  }
+  .contact section p {
+    font-size: 1.2rem;
+  }
+  .contact {
+    position: relative;
+    width: 80vw;
+    top: calc(100% * 0.36);
+    right: calc(100% * 0.1);
+  }
+  html {
+    font-size: 70%;
+  }
+  .bar {
+    background-image: url(../img/path15_smalldvice.png);
+    background-size: 100vw 50vw;
+    height: 50vw;
+  }
+}
