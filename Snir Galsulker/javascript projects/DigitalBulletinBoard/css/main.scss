@@ -1,0 +1,150 @@
+@import URL("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+@import URL("https://fonts.googleapis.com/css2?family=Suez+One&display=swap");
+
+$a-color: #222831;
+$b-color: #393e46;
+$c-color: #00adb5;
+$d-color: #eeeeee;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: heebo;
+  color: $a-color;
+}
+
+body {
+  overflow: clip;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $a-color;
+  color: $c-color;
+
+  h1 {
+    display: block;
+    margin: auto;
+    font-size: 3rem;
+    font-family: Suez One;
+  }
+  #date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    color: $d-color;
+    background-color: $c-color;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+}
+
+footer {
+  height: 2rem;
+  flex-basis: 2rem;
+  background-color: $d-color;
+  font-weight: bold;
+  color: $a-color;
+  div {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    width: max-content;
+    animation: scroll-news 300s linear infinite;
+    article {
+      width: max-content;
+    }
+  }
+}
+
+@keyframes scroll-news {
+  0% {
+    transform: translateX(-15%); /* Start outside the right edge */
+  }
+  100% {
+    transform: translateX(100%); /* Move to outside the left edge */
+  }
+}
+
+h2 {
+  border-bottom: 0.2rem solid $a-color;
+  color: $b-color !important;
+}
+
+#left {
+  min-width: 34rem;
+}
+#center {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+#message-input {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #dde5ed;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.carousel-item img {
+  width: 20rem;
+  height: auto;
+}
+
+#right {
+  min-width: 20rem;
+}
+
+#carouselAutoplaying {
+  height: 25rem;
+}
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+#message-list {
+  .card {
+    width: fit-content;
+    margin: 0.5rem;
+    border: 0.2rem solid #00adb5 !important;
+
+    button {
+      position: relative;
+      right: -1rem;
+      top: -1rem;
+      border-radius: 0.2rem;
+      border: none;
+      background-color: #fd9a9a;
+      font-size: small;
+    }
+  }
+}
+
+#rel-det {
+  font-size: 1.2rem;
+  span {
+    font-weight: bold;
+  }
+
+  #shabat-time {
+    padding-right: 2rem;
+  }
+}

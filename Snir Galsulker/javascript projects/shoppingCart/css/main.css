@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+html,
+body {
+  max-width: 100vw !important;
+}
+
+/* Full width on small screens (mobile) */
+@media (max-width: 768px) {
+  #offcanvasNavbar {
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+}
+/* 70% width on medium and larger screens */
+@media (min-width: 768px) {
+  #offcanvasNavbar {
+    width: 70% !important;
+  }
+}
+#offcanvasNavbar {
+  /* Responsive font sizes */
+  /* Ensure table and other elements take full width inside offcanvas */
+}
+#offcanvasNavbar h5 {
+  font-size: calc(2rem + 0.2vw) !important; /* Dynamically adjust font size based on viewport */
+}
+#offcanvasNavbar table {
+  table-layout: auto;
+  width: 100%;
+  font-size: calc(0.5rem + 1vw) !important; /* Dynamically adjust font size */
+}
+#offcanvasNavbar table .input-group .input-group-sm {
+  font-size: calc(0.5rem + 1vw) !important;
+}
+#offcanvasNavbar .offcanvas-body table,
+#offcanvasNavbar .offcanvas-body div,
+#offcanvasNavbar .offcanvas-body {
+  max-width: 100% !important;
+}/*# sourceMappingURL=main.css.map */

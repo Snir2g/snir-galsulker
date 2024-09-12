@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: heebo;
+  color: #222831;
+}
+
+body {
+  overflow: clip;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #222831;
+  color: #00adb5;
+}
+#top h1 {
+  display: block;
+  margin: auto;
+  font-size: 3rem;
+  font-family: Suez One;
+}
+#top #date-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  color: #eeeeee;
+  background-color: #00adb5;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+}
+
+footer {
+  height: 2rem;
+  flex-basis: 2rem;
+  background-color: #eeeeee;
+  font-weight: bold;
+  color: #222831;
+}
+footer div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scroll-news 300s linear infinite;
+}
+footer div article {
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@keyframes scroll-news {
+  0% {
+    transform: translateX(-15%); /* Start outside the right edge */
+  }
+  100% {
+    transform: translateX(100%); /* Move to outside the left edge */
+  }
+}
+h2 {
+  border-bottom: 0.2rem solid #222831;
+  color: #393e46 !important;
+}
+
+#left {
+  min-width: 34rem;
+}
+
+#center {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+#message-input {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #dde5ed;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.carousel-item img {
+  width: 20rem;
+  height: auto;
+}
+
+#right {
+  min-width: 20rem;
+}
+
+#carouselAutoplaying {
+  height: 25rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+#message-list .card {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5rem;
+  border: 0.2rem solid #00adb5 !important;
+}
+#message-list .card button {
+  position: relative;
+  right: -1rem;
+  top: -1rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: #fd9a9a;
+  font-size: small;
+}
+
+#rel-det {
+  font-size: 1.2rem;
+}
+#rel-det span {
+  font-weight: bold;
+}
+#rel-det #shabat-time {
+  padding-right: 2rem;
+}/*# sourceMappingURL=main.css.map */
