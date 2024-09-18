@@ -26,101 +26,43 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom JS -->
-    <script src="js/Connect Four.js" defer></script>
-    <title>Document</title>
+    <script src="js/Connect Four.js" type="module" defer></script>
+    <title>Connect 4</title>
   </head>
   <body onload="onPageLoad()">
     <main>
       <header>
-        <h1>connect<span class="text-blue">4</span></h1>
+        <h1>
+          <span class="connect-text">Connect</span>
+          <span class="four-text">4</span>
+          <i class="fa-solid fa-list-check"></i>
+        </h1>
       </header>
-      <section id="controls" class="mt-5 mb-2">
-        <button onclick="startGame()" class="btn btn-primary fs-3">
-          Start new game
-        </button>
-        <button onclick="init()" class="btn btn-secondary fs-3">
-          Reaset all
-        </button>
-      </section>
-      <section id="gameStat" class="badge text-bg-info fs-3 s">
-        <span class="badge text-bg-secondary"
-          >current turn: <span id="turn"></span>
-        </span>
-        <span class="badge text-bg-secondary">
-          Time elapsed: <span id="timer">00:00:00</span>
-        </span>
-        <span class="badge text-bg-secondary">
-          Player 1 Wins: <span id="playerOne">0</span>
-        </span>
-        <span class="badge text-bg-secondary">
-          Player 2 Wins: <span id="playerTwo">0</span>
-        </span>
-      </section>
-      <section id="tableBoard">
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="col">
-          <div class="insertcol"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </section>
+      <div>
+        <section id="controls" class="mt-5 mb-2">
+          <button onclick="startGame()" class="btn btn-primary fs-3">
+            Start new game
+          </button>
+          <button onclick="init()" class="btn btn-secondary fs-3">
+            Reaset all
+          </button>
+        </section>
+        <section id="gameStat" class="badge text-bg-info fs-3 s">
+          <span class="badge text-bg-secondary"
+            >current turn: <span id="turn"></span>
+          </span>
+          <span class="badge text-bg-secondary">
+            Time elapsed: <span id="timer">00:00:00</span>
+          </span>
+          <span class="badge text-bg-secondary">
+            Player 1 Wins: <span id="playerOne">0</span>
+          </span>
+          <span class="badge text-bg-secondary">
+            Player 2 Wins: <span id="playerTwo">0</span>
+          </span>
+        </section>
+      </div>
+      <section id="tableBoard"></section>
     </main>
   </body>
 </html>

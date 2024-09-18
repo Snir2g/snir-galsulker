@@ -18,6 +18,11 @@ class TaskManager {
     let indexToUpdate = this.tasks.findIndex((task) => task.id == id);
     this.tasks[indexToUpdate].completed = true;
   }
+
+  unDoTask(id) {
+    let indexToUpdate = this.tasks.findIndex((task) => task.id == id);
+    this.tasks[indexToUpdate].completed = false;
+  }
 }
 
 export default TaskManager;

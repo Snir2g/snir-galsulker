@@ -8,6 +8,14 @@
   color: #222831;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  max-width: 100vw;
+  width: 100vw;
+}
+
 body {
   overflow: clip;
   min-height: 100vh;
@@ -81,17 +89,20 @@ h2 {
   color: #393e46 !important;
 }
 
-#left {
-  min-width: 34rem;
+#left,
+#right {
+  flex: 0 0 25%; /* Ensure left and right sections have at least 30% width */
+  min-width: 25%;
 }
 
 #center {
-  width: 100%;
+  flex: 1; /* Center section takes the remaining space */
+  max-width: 45%;
   margin: 0 1rem;
 }
 
 #message-input {
-  width: calc(100% - 20px);
+  width: 100%;
   padding: 15px;
   margin-bottom: 15px;
   border: 2px solid #dde5ed;

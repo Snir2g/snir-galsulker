@@ -1,3 +1,6 @@
+import MainMenuModal from "./classes/MainMenuModal.js";
+import Modal from "./classes/MainMenuModal.js";
+
 // Game state constants to represent if the game is stopped or running
 const gameState = {
   gameStop: 0,
@@ -11,18 +14,12 @@ const NUMBER_OF_COLS = 7;
 const P1_COLOR = "red";
 const P2_COLOR = "blue";
 
-var style;
+let style;
+
+let menuModal = null;
 
 // Initial empty board state represented by a 2D array
-let board = [
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-];
+let board = [];
 
 // Game status object to track the current turn, number of wins for each player, and game state
 let gameStatus = {
@@ -46,19 +43,35 @@ function init() {
   gameStatus.p2Wins = 0;
   gameStatus.gameState = gameState.gameStop;
 
-  // Initialize board to empty state
+  // Initialize board to empty state and build the HTML code of grid board
+  let boradHTML = "";
+  board = [];
   for (let col = 0; col < NUMBER_OF_COLS; col++) {
+    board[col] = [];
+    boradHTML += `
+          <div class="col">
+            <div class="insertcol"></div>`;
     for (let row = 0; row < NUMBER_OF_ROWS; row++) {
       board[col][row] = 0;
+      boradHTML += `<div></div>`;
     }
+    boradHTML += `
+          </div>`;
   }
+
+  let tableBoard = document.getElementById("tableBoard");
+  tableBoard.innerHTML = boradHTML;
 }
 
 // Function to be called when the page loads, sets up the game and event listeners
-function onPageLoad() {
+window.onPageLoad = function onPageLoad() {
   style = document.createElement("style");
   document.head.appendChild(style);
 
+  menuModal = new MainMenuModal(() => {
+    startGame();
+  });
+  menuModal.show();
   // Define the playTurn function to be called when a column is clicked
   let playTurn = function () {
     // Only insert a disc if the game is currently running
@@ -74,7 +87,7 @@ function onPageLoad() {
   for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", playTurn, false);
   }
-}
+};
 
 // Function to insert a disc into the selected column
 function insertDisc(colElement) {
@@ -179,11 +192,11 @@ function isThisMoveIsWinCondition(col, row) {
 // TODO: create direction check
 
 // Function to start the game by setting the game state to running and start timer
-function startGame() {
+window.startGame = function startGame() {
   gameStatus.gameState = gameState.gameRunning;
   resetTimer(); // make sure timer is reaset
   startTimer(); // start timer
-}
+};
 
 // Function to start the timer
 function startTimer() {

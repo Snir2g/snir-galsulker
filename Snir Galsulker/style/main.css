@@ -18,6 +18,7 @@ html {
   border-top: 0.2rem solid #1ae0ec;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 #navbar nav {
   display: flex;
@@ -159,61 +160,68 @@ html {
   background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 11.25rem;
 }
-#my-projects #my-projects-header {
+#my-projects .tech img {
+  width: 5rem;
+  height: 5rem;
+}
+#my-projects .my-projects-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 6.25rem;
+  margin-top: 2.25rem;
   padding-bottom: 4.25rem;
   width: 100%;
 }
-#my-projects #my-projects-header h2 {
+#my-projects .my-projects-header h2 {
   color: #3a3a3a;
   font-size: 2.25rem;
 }
-#my-projects #my-projects-header p {
+#my-projects .my-projects-header p {
   font-size: 1.25rem;
   padding-top: 0.625rem;
 }
-#my-projects #projects-grid {
+#my-projects #projects-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e7feff;
+  padding: 2rem 0;
+}
+#my-projects #projects-page #projects-page-grid {
   display: grid;
   grid-template-columns: auto auto auto;
   width: 80%;
   gap: 3.25rem;
-  align-self: center;
 }
-#my-projects #projects-grid article {
+#my-projects #projects-page #projects-page-grid article {
   background-color: white;
   border-radius: 0.625rem;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0.1875rem 0.1875rem 0.9375rem rgba(0, 0, 0, 0.1607843137);
 }
-#my-projects #projects-grid article > section {
+#my-projects #projects-page #projects-page-grid article > section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin: 2.3rem 1.5rem 3.6rem;
 }
-#my-projects #projects-grid article > section h3 {
+#my-projects #projects-page #projects-page-grid article > section h3 {
   margin-bottom: 1.25rem;
   font-size: 1.4375rem;
   color: #3a3a3a;
 }
-#my-projects #projects-grid article > section p {
+#my-projects #projects-page #projects-page-grid article > section p {
   margin-bottom: 1rem;
 }
-#my-projects #projects-grid article > section .tech img {
-  width: 1.625rem;
-  height: 1.625rem;
-}
-#my-projects #projects-grid article .pro-img {
+#my-projects #projects-page #projects-page-grid article .pro-img {
   width: 100%;
   height: 14rem;
 }
-#my-projects #projects-grid article button {
+#my-projects #projects-page #projects-page-grid article button {
   border-radius: 1.5625rem;
   border: none;
   background-color: #1ae0ec;
@@ -223,17 +231,46 @@ html {
   padding: 0.3125rem 1.25rem;
   cursor: pointer;
 }
-#my-projects #projects-grid article button img {
+#my-projects #projects-page #projects-page-grid article button img {
   width: 0.875rem;
   height: 0.875rem;
   vertical-align: text-bottom;
 }
-#my-projects #projects-grid article button a {
+#my-projects #projects-page #projects-page-grid article button a {
   text-decoration: none;
   color: #3a3a3a;
   display: inline-block;
   width: 100%;
   height: 100%;
+}
+#my-projects #projects-JS a {
+  display: inline-block;
+  text-decoration: none;
+}
+#my-projects #projects-JS a:hover article {
+  transform: scale(1.1); /* Zoom in the image on hover */
+}
+#my-projects #projects-JS #projects-JS-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 80%;
+  gap: 3.25rem;
+}
+#my-projects #projects-JS #projects-JS-grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+#my-projects #projects-JS #projects-JS-grid article h3 {
+  margin-top: 1.5rem;
+  color: #525252;
+}
+#my-projects #projects-JS #projects-JS-grid article img {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 1rem;
+  box-shadow: 0.1875rem 0.1875rem 0.9375rem rgba(0, 0, 0, 0.1607843137);
 }
 
 footer {
@@ -358,7 +395,8 @@ footer #rights {
 }
 
 @media (max-width: 1199.98px) {
-  #my-projects #projects-grid {
+  #projects-page-grid,
+  #projects-JS-grid {
     grid-template-columns: repeat(2, auto) !important;
   }
   #contact-info menu {
@@ -366,7 +404,7 @@ footer #rights {
   }
 }
 @media (max-width: 991.98px) {
-  #my-projects #projects-grid {
+  #projects-page-grid {
     grid-template-columns: 1fr !important;
   }
   #navbar nav {

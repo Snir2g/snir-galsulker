@@ -1,3 +1,5 @@
+import MessageManager from "./classes/MessageManager";
+
 const dateOptions = {
   weekday: "long",
   year: "numeric",
@@ -6,6 +8,8 @@ const dateOptions = {
 };
 
 const API_NEWS_KEY = "bb625f463e9b4968b164fa20928ec7f6";
+
+let messageManager;
 
 //* https://www.hebcal.com/shabbat/?cfg=json&geonameid=293768&m=50*/
 function updateDateTime() {
@@ -175,7 +179,7 @@ function generateArticlesMivzakimHTML(articles) {
   return html;
 }
 
-function init() {
+window.init = function init() {
   //initions
   updateDateTime();
   religionSectionUpdate();
@@ -183,32 +187,30 @@ function init() {
   setMivzakim();
   //call intervals
   setInterval(updateDateTime, 1000);
-}
 
-function addMessage() {
+  messageManager = new MessageManager();
+};
+
+window.addMessage = function addMessage() {
   const input = document.getElementById("message-input");
-  const messageList = document.getElementById("message-list");
 
   if (input.value.trim() !== "") {
-    const card = document.createElement("div");
-    const cardBody = document.createElement("div");
-    card.className = "card border-dark mb-3";
-    cardBody.className = "card-body";
-    const messageP = document.createElement("p");
-    messageP.className = "card-text";
-    messageP.textContent = input.value;
+    messageManager.addMessage(input);
+    showMessages();
+  }
+};
 
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "close-btn";
-    deleteButton.innerText = "X";
-    deleteButton.onclick = function () {
-      messageList.removeChild(card);
-    };
-
-    card.appendChild(cardBody);
-    cardBody.appendChild(deleteButton);
-    cardBody.appendChild(messageP);
-    messageList.appendChild(card);
-    input.value = "";
+function showMessages() {
+  const toastContainer = document.getElementById("toast-container");
+  toastContainer.innerHTML = "";
+  for (let message of messageManager.messages) {
+    let toastHTML = `
+<div class="toast align-items-center mb-4 text-white show" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-body fs-1">
+    ${message.text}
+  </div>
+</div>
+`;
+    toastContainer.innerHTML += toastHTML;
   }
 }

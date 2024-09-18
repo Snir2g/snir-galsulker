@@ -21,36 +21,34 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       defer
     ></script>
-
-    <title>TO-DO List</title>
+    <title>Document</title>
   </head>
   <body>
     <div class="container text-center">
       <h1 class="display-4 text-light text-bg-secondary">
-        TO-DO List <i class="fa-solid fa-list-check"></i>
+        MANAGE-U <i class="fa-solid fa-check-double text-warning"></i>
       </h1>
-      <div class="form-floating mb-3 me-2 d-inline-block w-50">
+      <div class="form-floating mb-3 d-inline-block w-50">
         <input
           type="text"
           class="form-control"
           id="description"
           placeholder="Task description"
-          onkeydown="checkKeyPressedBeofreAddNewTask(event)"
         />
         <label for="description">Task description</label>
       </div>
       <button class="btn btn-warning" onclick="addNewTask()">+</button>
-      <div class="d-flex flex-column flex-md-row justify-content-evenly">
-        <div class="w-100">
-          <h5 class="display-5 text-success">Active</h5>
-          <ul id="activeTasks" class="list-group mb-4"></ul>
-        </div>
-        <div class="w-100">
-          <h5 class="display-5 text-danger">Completed</h5>
-          <ul id="completedTasks" class="list-group mb-4"></ul>
-        </div>
+
+      <div>
+        <h5 class="display-5 text-success">Active</h5>
+        <ul id="activeTasks" class="list-group mb-4"></ul>
+      </div>
+      <div>
+        <h5 class="display-5 text-danger">Completed</h5>
+        <ul id="completedTasks" class="list-group mb-4"></ul>
       </div>
     </div>
+
     <script src="scripts.js" type="module"></script>
   </body>
 </html>

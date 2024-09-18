@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+h1 {
+  font-family: "Playwrite IT Moderna", cursive;
+  font-size: 5rem;
+  display: inline-block;
+  color: rgb(238, 99, 6);
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5rem solid rgb(238, 99, 6);
+  border-bottom-right-radius: 20%;
+  animation: borderFade 5s;
+}
+h1 img {
+  width: 4rem;
+  height: auto;
+  margin-left: -1rem;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-}
-main header h1 {
-  font-family: "Playwrite IT Moderna", cursive;
-  font-size: 5rem;
-  z-index: 99;
-  border-bottom: 0.5rem solid;
-  border-bottom-right-radius: 15%;
-  color: rgb(238, 99, 6);
-}
-main header h1 img {
-  width: 4rem;
-  height: auto;
-  margin-left: -1rem;
 }
 
 .text-blue {
@@ -58,4 +61,50 @@ main header h1 img {
 
 #tableBoard .col:hover .insertcol {
   background-color: red;
+}
+
+.connect-text {
+  color: rgb(238, 99, 6);
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.four-text {
+  color: blue;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInTop 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes borderFade {
+  0% {
+    border-bottom: 0.5rem solid rgba(238, 99, 6, 0);
+  }
+  100% {
+    border-bottom: 0.5rem solid rgb(238, 99, 6);
+  }
 }/*# sourceMappingURL=main.css.map */
