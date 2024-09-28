@@ -1,4 +1,4 @@
-import MessageManager from "./classes/MessageManager";
+import MessageManager from "./classes/MessageManager.js";
 
 const dateOptions = {
   weekday: "long",
@@ -165,7 +165,7 @@ function generateArticlesHTML(articles) {
 }
 
 function generateArticlesMivzakimHTML(articles) {
-  html = `<div>`;
+  let html = `<div>`;
   articles.forEach((article) => {
     html += `<article> | <small class="text-body-primary"> ${
       article.title

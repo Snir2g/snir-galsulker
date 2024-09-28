@@ -1,7 +1,7 @@
 import Modal from "./Modal.js";
 
 class MainMenuModal extends Modal {
-  constructor(onClickStart) {
+  constructor(onClickStart, optios) {
     // Call the base class constructor to handle common modal functionality
     super(`
                       <header>
@@ -12,6 +12,9 @@ class MainMenuModal extends Modal {
                         </h1>
                       </header>
                       <div class="vstack gap-2 col-md-5 mx-auto mt-4">
+                        <button type="button" id="continueGame" class="btn btn-primary" ${
+                          optios.isGameExsist ? "" : "disabled"
+                        }>Continue Game</button>
                         <button type="button" id="startNewGame" class="btn btn-success">Start new Game</button>
                       </div>`);
     this.onClickStart = onClickStart;

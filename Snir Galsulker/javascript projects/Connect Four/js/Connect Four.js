@@ -1,5 +1,6 @@
 import MainMenuModal from "./classes/MainMenuModal.js";
 import Modal from "./classes/MainMenuModal.js";
+import GameInformation from "./classes/GameInformation.js";
 
 // Game state constants to represent if the game is stopped or running
 const gameState = {
@@ -17,6 +18,8 @@ const P2_COLOR = "blue";
 let style;
 
 let menuModal = null;
+
+let gameInfo;
 
 // Initial empty board state represented by a 2D array
 let board = [];
@@ -43,6 +46,8 @@ function init() {
   gameStatus.p2Wins = 0;
   gameStatus.gameState = gameState.gameStop;
 
+  gameInfo = new GameInformation();
+
   // Initialize board to empty state and build the HTML code of grid board
   let boradHTML = "";
   board = [];
@@ -68,9 +73,13 @@ window.onPageLoad = function onPageLoad() {
   style = document.createElement("style");
   document.head.appendChild(style);
 
-  menuModal = new MainMenuModal(() => {
-    startGame();
-  });
+  menuModal = new MainMenuModal(
+    () => {
+      startGame();
+    },
+    { isGameExsist: false }
+  );
+
   menuModal.show();
   // Define the playTurn function to be called when a column is clicked
   let playTurn = function () {
