@@ -15,6 +15,11 @@
     grid-template-columns: 1fr !important;
   }
 
+  #js-preview {
+    flex-direction: column-reverse !important;
+    width: 100%;
+  }
+
   #navbar {
     nav {
       justify-content: space-between;

@@ -94,14 +94,18 @@ h2 {
   color: $b-color !important;
 }
 
-#left,
-#right {
+#left {
   flex: 0 0 25%; /* Ensure left and right sections have at least 30% width */
   min-width: 25%;
 }
+
+#right {
+  flex: 0 0 10%; /* Ensure left and right sections have at least 30% width */
+  min-width: 10%;
+}
 #center {
   flex: 1; /* Center section takes the remaining space */
-  max-width: 45%;
+  max-width: 55%;
   margin: 0 1rem;
 }
 
@@ -128,24 +132,6 @@ h2 {
 .icon {
   width: 2rem;
   height: 2rem;
-}
-
-#message-list {
-  .card {
-    width: fit-content;
-    margin: 0.5rem;
-    border: 0.2rem solid #00adb5 !important;
-
-    button {
-      position: relative;
-      right: -1rem;
-      top: -1rem;
-      border-radius: 0.2rem;
-      border: none;
-      background-color: #fd9a9a;
-      font-size: small;
-    }
-  }
 }
 
 #rel-det {

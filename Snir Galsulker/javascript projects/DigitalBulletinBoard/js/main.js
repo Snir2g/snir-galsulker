@@ -1,4 +1,4 @@
-import MessageManager from "./classes/MessageManager.js";
+import CarouselManager from "./classes/CarouselManager.js";
 
 const dateOptions = {
   weekday: "long",
@@ -9,7 +9,7 @@ const dateOptions = {
 
 const API_NEWS_KEY = "bb625f463e9b4968b164fa20928ec7f6";
 
-let messageManager;
+let carouselManager;
 
 //* https://www.hebcal.com/shabbat/?cfg=json&geonameid=293768&m=50*/
 function updateDateTime() {
@@ -61,8 +61,9 @@ function extractSahbatDetailsToHTML(data) {
 
     const parashat = items.find((item) => item.category === "parashat");
 
-    htmlStr = "";
-    htmlStr += `<div><img src="images/sefer.svg" alt="ספר תורה" class="icon"/> פרשת השבוע: <span>${parashat.hebrew}</span></div><div><img src="images/candels.svg" alt="נרות שבת" class="icon"/> זמני כניסת שבת: </div><div id="shabat-time">`;
+    let htmlStr = "";
+    if (parashat)
+      htmlStr += `<div><img src="images/sefer.svg" alt="ספר תורה" class="icon"/> פרשת השבוע: <span>${parashat.hebrew}</span></div><div><img src="images/candels.svg" alt="נרות שבת" class="icon"/> זמני כניסת שבת: </div><div id="shabat-time">`;
     if (!isDatesAreSameDay(date, now)) {
       htmlStr += `<div>תאריך שבת הקרובה: <span>${date.toLocaleDateString(
         "he-IL"
@@ -140,7 +141,7 @@ function generateArticlesHTML(articles) {
 
   articles.forEach((article) => {
     html += `
-    <div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="${article.urlToImage}" class="img-fluid rounded-start" alt="${
@@ -188,29 +189,13 @@ window.init = function init() {
   //call intervals
   setInterval(updateDateTime, 1000);
 
-  messageManager = new MessageManager();
+  carouselManager = new CarouselManager("carousel-container", "5px"); //TO-DO CHANGE FROM PX TO REM UNIT
 };
 
 window.addMessage = function addMessage() {
   const input = document.getElementById("message-input");
 
   if (input.value.trim() !== "") {
-    messageManager.addMessage(input);
-    showMessages();
+    carouselManager.addMessage(input.value);
   }
 };
-
-function showMessages() {
-  const toastContainer = document.getElementById("toast-container");
-  toastContainer.innerHTML = "";
-  for (let message of messageManager.messages) {
-    let toastHTML = `
-<div class="toast align-items-center mb-4 text-white show" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-body fs-1">
-    ${message.text}
-  </div>
-</div>
-`;
-    toastContainer.innerHTML += toastHTML;
-  }
-}

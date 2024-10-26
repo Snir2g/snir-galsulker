@@ -1,10 +1,5 @@
 #my-projects {
-  background-color: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 11.25rem;
-
-  #my-projects-header {
+  .my-projects-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,15 +19,23 @@
     }
   }
 
-  #projects-grid {
+  #projects-page-grid,
+  #projects-JS-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 80%;
     gap: 3.25rem;
     align-self: center;
 
+    h3 {
+      margin-bottom: 1.25rem;
+      font-size: 1.4375rem;
+      color: #3a3a3a;
+    }
+  }
+
+  #projects-page-grid {
     article {
-      background-color: white;
       border-radius: 0.625rem;
       box-shadow: 3px 3px 15px #00000029;
 
@@ -41,11 +44,6 @@
         text-align: center;
         margin: 2.3rem 1.5rem 3.6rem;
 
-        h3 {
-          margin-bottom: 1.25rem;
-          font-size: 1.4375rem;
-          color: #3a3a3a;
-        }
         p {
           margin-bottom: 1rem;
         }
@@ -63,6 +61,40 @@
       }
       button {
         @include button(0.875rem, 700, 0.3125rem, 1.25rem);
+      }
+    }
+  }
+  #projects-page {
+    background-color: #1ae0ec;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 11.25rem;
+    article {
+      background-color: white;
+    }
+  }
+  #projects-JS {
+    background-color: #8888;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 11.25rem;
+    a {
+      text-decoration: none;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    article {
+      text-align: center;
+
+      .pro-img {
+        border-radius: 0.625rem;
+        box-shadow: 3px 3px 15px #00000029;
+        width: 18rem;
+        height: 18rem;
       }
     }
   }
