@@ -118,7 +118,7 @@ function checkWin() {
 function recordGame(result) {
   let stringDate = getNowLocalDateString();
   history.push(
-    `${player1} vs ${player2}: ${result} at <span class="small"> ${stringDate}</span>`
+    `${player1} vs ${player2}: ${result} <span class="small">at ${stringDate}</span>`
   );
   localStorage.setItem("gameHistory", JSON.stringify(history));
   setTimeout(returnToMenu, 500);
@@ -142,7 +142,7 @@ function displayHistory() {
   gameHistoryList.innerHTML = "";
   history.forEach((game, index) => {
     const li = document.createElement("li");
-    li.innerText = game;
+    li.innerHTML = game;
     gameHistoryList.appendChild(li);
   });
 }

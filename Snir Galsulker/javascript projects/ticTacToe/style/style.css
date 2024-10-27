@@ -40,6 +40,11 @@ body {
   opacity: 0.6;
 }
 
+.small {
+  color: rgb(186, 186, 186);
+  font-size: 0.8em;
+}
+
 button {
   margin: 0.625rem;
   padding: 0.625rem;
